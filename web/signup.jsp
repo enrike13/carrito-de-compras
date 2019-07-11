@@ -51,21 +51,21 @@
         <!-- Formulario de Registro de usuario -->
         <div class="content-signup">   
             <h2 class="form-signin-heading">Registrate gratis</h2>
-            <form class="formulario" method="post">
+            <form action="ServletDatos" class="formulario" method="post">
 
                 <div class="top-row">
                     <div class="field-wrap">
                         <label>
                             Nombre
                         </label>
-                        <input type="text" required class="form-control"/>
+                        <input type="text" name="nombre" required class="form-control"/>
                     </div>
 
                     <div class="field-wrap">
                         <label>
                             Apellido
                         </label>
-                        <input type="text"required class="form-control"/>
+                        <input type="text" name="apellido" required class="form-control"/>
                     </div>
                 </div>
 
@@ -73,22 +73,20 @@
                     <label>
                         Email
                     </label>
-                    <input type="email"required class="form-control"/>
+                    <input type="email" name="email" required class="form-control"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Password
                     </label>
-                    <input type="password"required class="form-control"/>
+                    <input type="password" name="password" required class="form-control"/>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-lg btn-primary">Enviar</button>
                 <button type="submit" class="btn btn-lg btn-warning">Cancelar</button>
-
-
             </form>
-
         </div>
+
     </body>
 </html>

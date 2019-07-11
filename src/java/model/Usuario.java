@@ -1,76 +1,82 @@
-
 package model;
 
 public class Usuario {
+
     private String nombre;
-    private String direccion;
-    private String telefono;
-    private String user;
+    private String apellido;
+    private String email;
     private String pass;
 
-    public Usuario(String nombre, String direccion, String telefono, String user, String pass) {
+    public Usuario(String nombre, String apellido, String email, String pass) {
         this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.user = user;
+        this.apellido = apellido;
+        this.email = email;
         this.pass = pass;
     }
-    
+
     public Usuario() {
-        this.nombre = "Enrique ENCARNACION";
-        this.direccion = "Lima - Perú";
-        this.telefono = "000000000";
-        this.user = "enrike";
-        this.pass = "123";
+
     }
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + ", user=" + user + ", pass=" + pass + '}';
+        return "Usuario{" + "nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", pass=" + pass + '}';
     }
 
-
-    
+    /**
+     * @return the nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * @param nombre the nombre to set
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
-        return direccion;
+    /**
+     * @return the apellido
+     */
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    /**
+     * @param apellido the apellido to set
+     */
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getTelefono() {
-        return telefono;
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
+    /**
+     * @return the pass
+     */
     public String getPass() {
         return pass;
     }
 
+    /**
+     * @param pass the pass to set
+     */
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
-    
-}
 
+}

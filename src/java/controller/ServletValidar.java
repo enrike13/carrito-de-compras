@@ -34,6 +34,7 @@ public class ServletValidar extends HttpServlet {
         String sUsuario = request.getParameter("usuario");
         String sClave = request.getParameter("clave");
         String userAdmin = "admin@empresa.pe";
+            sesion.setAttribute("miEmail", sUsuario);
         String claveAdmin = "admin";
 
         String email = (String) sesion.getAttribute("miEmail");
@@ -41,13 +42,14 @@ public class ServletValidar extends HttpServlet {
 
         if ((email.equals(sUsuario) && password.equals(sClave))
                 || (sUsuario.equals(userAdmin) && sClave.equals(claveAdmin))) {
+
             RequestDispatcher rd = request.getRequestDispatcher("micuenta.jsp");
             rd.include(request, response);
             out.println("<script>alert('Bienvenido. Ya puedes hacer tus compras');</script>");
 
         } else {
-            RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
             out.println("<script>alert('Usuario o contraseña incorrectos');</script>");
+            RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
             rd.include(request, response);
             //response.sendRedirect("login.jsp");
         }

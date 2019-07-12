@@ -9,7 +9,6 @@
 <html>
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Login</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -33,12 +32,10 @@
             <div id="top-header">
                 <div class="container">
                     <ul class="header-links pull-left">
-                        <a href="index.jsp" class="logo">
-                            <img src="./img/logo.png" alt="">
-                        </a>
-                        <li><a href="https://wa.me/912984612"><i class="fa fa-phone"></i> +54 912 984 612</a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i> enrikefen20@gmail.com</a></li>
-                        <li><a href="#"><i class="fa fa-map-marker"></i> Lima - Perú</a></li>
+                        <li><a href="index.jsp" class="logo">
+                                <img src="./img/logo.png" alt="">
+                            </a>
+                        </li>
                     </ul>
                     <ul class="header-links pull-right">
                         <li><a href="signup.jsp"><i class="fa fa-user-plus"></i> Registrate</a></li>
@@ -52,7 +49,7 @@
 
         <!-- Formulario de logeo -->
         <div class="content-logeo" >
-            <form class="login" action="ServletValidar" method="POST">
+            <form class="login" action="${pageContext.request.contextPath}/ServletValidar" method="POST">
                 <h2 class="form-signin-heading">Iniciar Sesion</h2>
                 <input type="email" name="usuario" class="form-control" placeholder="email" required autofocus >
                 <input type="password" name="clave" class="form-control" placeholder="contraseña" required >

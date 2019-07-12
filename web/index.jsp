@@ -26,7 +26,7 @@
         <div id="top-header">
             <div class="container">
                 <ul class="header-links pull-left">
-                    <li><a href="#"><i class="fa fa-phone"></i> +54 912 984 612</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=912984612&text=Env%C3%ADanos%20tus%20dudas" target="_black"><i class="fa fa-phone"></i> +54 912 984 612</a></li>
                     <li><a href="#"><i class="fa fa-envelope-o"></i> enrikefen20@gmail.com</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i> Lima - Perú</a></li>
                 </ul>
@@ -583,33 +583,6 @@
         <!-- /container -->
     </div>
     <!-- /NEWSLETTER -->
-
-    <main>
-        <div class="container">
-            <form action="login" method="POST">
-                <table>
-                    <tbody>
-                        <tr>
-                            <p>Inicio de cesion</p>
-                        </tr>
-                        <tr>
-                            <td>Usuario: </td>
-                            <td><input type="text" name="usuario" size="30px" /></td>
-                        </tr>
-                        <tr>
-                            <td>Contraseña: </td>
-                            <td><input type="password" name="password" value="" size="30px" /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" value="Enviar" name="enviar" /></td>
-                            <td><input type="reset" value="Cancelar" name="enrviar" /></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-        </div>
-    </main>
-
 
     <footer>
         <!-- FOOTER -->

@@ -32,12 +32,10 @@
             <div id="top-header">
                 <div class="container">
                     <ul class="header-links pull-left">
-                        <a href="index.jsp" class="logo">
-                            <img src="./img/logo.png" alt="">
-                        </a>
-                        <li><a href="https://wa.me/912984612"><i class="fa fa-phone"></i> +54 912 984 612</a></li>
-                        <li><a href="#"><i class="fa fa-envelope-o"></i> enrikefen20@gmail.com</a></li>
-                        <li><a href="#"><i class="fa fa-map-marker"></i> Lima - Perú</a></li>
+                        <li><a href="index.jsp" class="logo">
+                                <img src="./img/logo.png" alt="">
+                            </a>
+                        </li>
                     </ul>
                     <ul class="header-links pull-right">
                         <li><a href="signup.jsp"><i class="fa fa-user-plus"></i> Registrate</a></li>

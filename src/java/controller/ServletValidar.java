@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +15,7 @@ public class ServletValidar extends HttpServlet {
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
+        response.setContentType("text/html;charset=UTF-8");
         switch (path) {
             case "/ServletValidar":
                 validar(request, response);
@@ -28,18 +30,26 @@ public class ServletValidar extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         HttpSession sesion = request.getSession();
-        
+
         String sUsuario = request.getParameter("usuario");
         String sClave = request.getParameter("clave");
+        String userAdmin = "admin@empresa.pe";
+        String claveAdmin = "admin";
 
         String email = (String) sesion.getAttribute("miEmail");
         String password = (String) sesion.getAttribute("miPassword");
 
-        if (email.equals(sUsuario) && password.equals(sClave)) {
-            response.sendRedirect("micuenta.jsp");
+        if ((email.equals(sUsuario) && password.equals(sClave))
+                || (sUsuario.equals(userAdmin) && sClave.equals(claveAdmin))) {
+            RequestDispatcher rd = request.getRequestDispatcher("micuenta.jsp");
+            rd.include(request, response);
+            out.println("<script>alert('Bienvenido. Ya puedes hacer tus compras');</script>");
+
         } else {
-            response.sendRedirect("index.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
             out.println("<script>alert('Usuario o contraseña incorrectos');</script>");
+            rd.include(request, response);
+            //response.sendRedirect("login.jsp");
         }
 
     }

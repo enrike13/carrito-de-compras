@@ -154,7 +154,7 @@
             </div>
             <!-- /MAIN HEADER -->
         </header>
-                        
+
         <!-- Tenemos los mejores precios..!!-->
         <div class="section">   
             <!-- container -->
@@ -668,7 +668,7 @@
         <script>
             $(document).ready(function () {
                 localStorage.clear();
-                
+
                 // Para el carrito
                 $(".add-to-cart-btn").click(function () {
                     /* alert("Es necesario iniciar sesión"); */
@@ -676,9 +676,8 @@
                     cantidad++;
                     $("#contadorCarrito").html(cantidad);
                     localStorage.setItem(cantidad, cantidad);
-
                 });
-                
+
                 // Para me gusta
                 $(".add-to-wishlist").click(function () {
                     /* alert("Es necesario iniciar sesión"); */
@@ -686,7 +685,6 @@
                     cantidadMegusta++;
                     $("#contadorMegusta").html(cantidadMegusta);
                     localStorage.setItem(cantidadMegusta, cantidadMegusta);
-
                 });
             })
         </script>

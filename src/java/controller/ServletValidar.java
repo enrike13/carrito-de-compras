@@ -20,7 +20,6 @@ public class ServletValidar extends HttpServlet {
             case "/ServletValidar":
                 validar(request, response);
                 break;
-
         }
 
     }
@@ -30,29 +29,32 @@ public class ServletValidar extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         HttpSession sesion = request.getSession();
-
+        
         String sUsuario = request.getParameter("usuario");
         String sClave = request.getParameter("clave");
-        String userAdmin = "admin@empresa.pe";
-            sesion.setAttribute("miEmail", sUsuario);
+        
+        String userAdmin = "admin@empresa.pe";        
         String claveAdmin = "admin";
 
         String email = (String) sesion.getAttribute("miEmail");
         String password = (String) sesion.getAttribute("miPassword");
 
-        if ((email.equals(sUsuario) && password.equals(sClave))
+        if ((sUsuario.equals(email) && sClave.equals(password))
                 || (sUsuario.equals(userAdmin) && sClave.equals(claveAdmin))) {
 
             RequestDispatcher rd = request.getRequestDispatcher("micuenta.jsp");
             rd.include(request, response);
-            out.println("<script>alert('Bienvenido. Ya puedes hacer tus compras');</script>");
-
+            sesion.setAttribute("miEmail", sUsuario);
+            out.println("<script>alert('BIENVENIDO.!YA PUEDES HACER TUS COMPRAS¡');</script>");
+            
         } else {
-            out.println("<script>alert('Usuario o contraseña incorrectos');</script>");
+            
             RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
             rd.include(request, response);
+            out.println("<script>alert('USUARIO O CONTRASEÑAS INCORRECTOS');</script>");
             //response.sendRedirect("login.jsp");
         }
+        
 
     }
     /* protected void processRequest(HttpServletRequest request, HttpServletResponse response)
